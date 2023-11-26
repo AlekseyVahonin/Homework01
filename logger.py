@@ -33,6 +33,11 @@ def copy_data():
         file.write(f'{original_file[line]}\n')
 
 
+def new_function():
+
+    pass
+
+
 def change_data():
 
     print('Выберите вариант операции:\n'
