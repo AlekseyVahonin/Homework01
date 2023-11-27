@@ -24,6 +24,32 @@ def print_data():
     print('='*50)
 
 
+def search_contact():
+
+    print('Выберите вариант операции:\n'
+          '1. Имя: \n'
+          '2. Фамилия: \n'
+          '3. Отчество: \n'
+          '4. Телефон: \n'
+          '5. Адрес: ')
+    command = input('Введите номер операции: ')
+
+    while command not in ('1', '2', '3', '4', '5'):
+        print('Некорректный ввод')
+        command = input('Введите номер операции: ')
+
+    i_search_param = int(command) - 1
+
+    search = input('Введите параметр: ').title()
+    print()
+    contacts_list = read_file().rstrip().split('\n\n')
+
+    for contact_str in contacts_list:
+        contact_lst = contact_str.replace('\n', ' ').split()
+        if search in contact_lst[i_search_param]:
+            print(contact_str)
+
+
 def copy_data():
     print_data()
     line = int(input('Выберите строку для копирования: ')) - 1
