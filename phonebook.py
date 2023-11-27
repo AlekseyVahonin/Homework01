@@ -33,7 +33,6 @@ def input_data():
     patronymic = input_patronymic()
     phone = input_phone()
     adress = input_adress()
-    # Изменил функцию input_data
     str_data = f'{name} {surname} {patronymic} {phone} \n{adress}\n\n'
     with open('phonebook.txt', 'a', encoding='UTF-8') as file:
         file.write(str_data)
